@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchTrendsMovies } from "../../servises/api";
 import Errors from "../../components/Errors/Errors";
+import MovieList from "../../components/MovieList/MovieList";
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
@@ -10,7 +11,7 @@ const HomePage = () => {
     const getMovies = async () => {
       try {
         const movies = await fetchTrendsMovies();
-        setMovies(movies);
+        setMovies(movies.data.results);
       } catch (error) {
         setError(error.message);
       }
@@ -18,11 +19,10 @@ const HomePage = () => {
     getMovies();
   }, [error]);
 
-  console.log(movies);
-
   return (
     <div>
       <h1>Trending today</h1>
+      <MovieList movieList={movies} />
 
       {error && <Errors message={error} />}
     </div>
