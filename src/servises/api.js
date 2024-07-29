@@ -19,11 +19,18 @@ export const fetchTrendsMovies = async () => {
     `/trending/movie/day?language=en-US`,
     options
   );
-  return response;
+  return response.data.results;
 };
 
-// export const fetchMovies = async () => {
-//   const response = await axios.get(URL, options);
-//   console.log();
-//   return response;
-// };
+export const searchMovieByName = async (query) => {
+  const response = await axios.get(
+    `/search/movie?include_adult=false&language=en-US&page=1&query=${query} `,
+    options
+  );
+  return response.data.results;
+};
+
+export const movieDetailsById = async (id) => {
+  const response = await axios.get(`/movie/${id}?language=en-US`, options);
+  return response;
+};
