@@ -32,5 +32,5 @@ export const searchMovieByName = async (query) => {
 
 export const movieDetailsById = async (id) => {
   const response = await axios.get(`/movie/${id}?language=en-US`, options);
-  return response;
+  return response.data;
 };
