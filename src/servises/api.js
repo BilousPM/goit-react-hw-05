@@ -31,3 +31,11 @@ export const movieDetailsById = async (id) => {
   const response = await axios.get(`/movie/${id}?language=en-US`, options);
   return response.data;
 };
+
+export const fetchMoviReviews = async () => {
+  const response = await axios.get(
+    `/movie/762441/reviews?language=en-US`,
+    options
+  );
+  return response.data.results;
+};

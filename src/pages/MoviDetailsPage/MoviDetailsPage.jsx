@@ -3,7 +3,6 @@ import { movieDetailsById } from "../../servises/api";
 import { NavLink, Outlet, useParams } from "react-router-dom";
 import Errors from "../../components/Errors/Errors";
 import s from "../../components/Header/Header.module.css";
-import clsx from "clsx";
 
 const MoviDetailsPage = () => {
   const [data, setData] = useState(null);
