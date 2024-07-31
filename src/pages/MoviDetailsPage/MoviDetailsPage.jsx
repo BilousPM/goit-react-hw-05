@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { movieDetailsById } from "../../servises/api";
-import { useParams } from "react-router-dom";
+import { NavLink, Outlet, useParams } from "react-router-dom";
 import Errors from "../../components/Errors/Errors";
+import s from "../../components/Header/Header.module.css";
+import clsx from "clsx";
 
 const MoviDetailsPage = () => {
   const [data, setData] = useState(null);
@@ -28,6 +30,19 @@ const MoviDetailsPage = () => {
   return (
     <div>
       <img src={`https://image.tmdb.org/t/p/w500/${data.backdrop_path}`} />
+
+      <ul className={s.nav}>
+        <li>
+          <NavLink className={s.link} to="reviews">
+            Reviews
+          </NavLink>
+        </li>
+        <li>
+          <NavLink className={s.link} to="cast">
+            Cast
+          </NavLink>
+        </li>
+      </ul>
       <div>
         <h1>Title: {data.original_title}</h1>
 
@@ -36,6 +51,7 @@ const MoviDetailsPage = () => {
         </p>
       </div>
       {error && <Errors message={error} />}
+      <Outlet />
     </div>
   );
 };

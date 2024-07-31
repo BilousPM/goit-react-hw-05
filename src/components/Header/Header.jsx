@@ -15,7 +15,7 @@ const Header = () => {
             <NavLink className={buildLinkClass} to="/">
               Home
             </NavLink>
-          </li>{" "}
+          </li>
           <li>
             <NavLink className={buildLinkClass} to="/movies">
               Movies

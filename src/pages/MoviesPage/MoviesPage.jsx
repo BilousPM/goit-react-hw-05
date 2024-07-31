@@ -21,7 +21,6 @@ const MoviesPage = () => {
     searchMovie();
   }, [query]);
 
-  console.log(filtredMovi);
   return (
     <div>
       <SearchBar setQuery={setQuery} />
