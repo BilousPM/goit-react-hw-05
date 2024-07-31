@@ -9,7 +9,7 @@ const MovieList = ({ movieList = [] }) => {
       <Grid>
         {movieList.map((movie) => (
           <GridItem key={movie.id}>
-            <Link to={`movies/${movie.id}`} state={location}>
+            <Link to={`/movies/${movie.id}`} state={location}>
               <img
                 src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
               />

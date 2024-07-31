@@ -2,7 +2,7 @@ import toast, { Toaster } from "react-hot-toast";
 import s from "./SearchBar.module.css";
 import { Field, Form, Formik } from "formik";
 
-const SearchBar = ({ setQuery }) => {
+const SearchBar = ({ handleSearch }) => {
   const initialValues = {
     query: "",
   };
@@ -14,8 +14,8 @@ const SearchBar = ({ setQuery }) => {
       });
       return;
     }
-    setQuery(valeus.query);
-    actions.resetForm();
+    handleSearch(valeus.query);
+    // actions.resetForm();
   };
   return (
     <div>
