@@ -60,9 +60,9 @@ const MoviDetailsPage = () => {
       </div>
       {error && <Errors message={error} />}
 
-      <Outlet />
-      {/* <Suspense fallback={<h2>loader</h2>}>
-      </Suspense> */}
+      <Suspense fallback={<h2>loader</h2>}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 };
