@@ -25,6 +25,15 @@ const MovieReviews = () => {
 
   return (
     <div>
+      {reviews.length === 0 && (
+        <h3
+          style={{
+            color: "aqua",
+          }}
+        >
+          Sorry, there are no reviews for this movie yet
+        </h3>
+      )}
       <ul>
         {reviews.map((review) => (
           <li key={review.id}>
