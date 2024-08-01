@@ -9,10 +9,8 @@ const MoviesPage = () => {
   const [filtredMovi, setFiltredMovie] = useState([]);
   const [error, setError] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams();
-  // const [query, setQuery] = useState("");
   const query = searchParams.get("query") ?? "";
-  const location = useLocation();
-  console.log(location);
+  // const location = useLocation();
 
   useEffect(() => {
     const searchMovie = async () => {
@@ -28,7 +26,6 @@ const MoviesPage = () => {
 
   const handleSearch = (value) => {
     if (!value) return setSearchParams({});
-    // setQuery(value);
     searchParams.set("query", value);
     setSearchParams(searchParams);
   };

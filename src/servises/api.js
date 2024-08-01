@@ -39,3 +39,11 @@ export const fetchMoviReviews = async (id) => {
   );
   return response.data.results;
 };
+
+export const fetchMovieCast = async (id) => {
+  const response = await axios.get(
+    `/movie/${id}/credits?language=en-US`,
+    options
+  );
+  return response.data.cast;
+};
