@@ -1,3 +1,8 @@
+.wrapper {
+  text-align: center;
+  padding-top: 40px;
+}
+
 .nav {
   display: flex;
   padding: 20px;
@@ -12,9 +17,10 @@
   bottom: 10px;
   text-decoration: none;
   border-radius: 10px;
+  &:hover {
+    color: aqua;
+  }
 }
-.active {
-  color: aqua;
-  background-color: rgb(56, 56, 56);
-  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+.image {
+  margin: 30px auto;
 }

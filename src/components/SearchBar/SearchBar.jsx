@@ -15,7 +15,7 @@ const SearchBar = ({ handleSearch }) => {
       return;
     }
     handleSearch(valeus.query);
-    // actions.resetForm();
+    actions.resetForm();
   };
   return (
     <div>

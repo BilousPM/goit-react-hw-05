@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchTrendsMovies } from "../../servises/api";
 import Errors from "../../components/Errors/Errors";
 import MovieList from "../../components/MovieList/MovieList";
+import s from "./HomePage.module.css";
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
@@ -20,8 +21,8 @@ const HomePage = () => {
   }, [error]);
 
   return (
-    <div>
-      <h1>Trending today</h1>
+    <div className={s.wrapper}>
+      <h1 className={s.title}>Trending today</h1>
       <MovieList movieList={movies} />
 
       {error && <Errors message={error} />}
