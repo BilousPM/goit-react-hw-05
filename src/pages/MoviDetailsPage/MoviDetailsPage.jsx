@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { movieDetailsById } from "../../servises/api";
 import {
   Link,
@@ -59,7 +59,10 @@ const MoviDetailsPage = () => {
         </p>
       </div>
       {error && <Errors message={error} />}
+
       <Outlet />
+      {/* <Suspense fallback={<h2>loader</h2>}>
+      </Suspense> */}
     </div>
   );
 };
