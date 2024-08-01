@@ -3,7 +3,7 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import { searchMovieByName } from "../../servises/api";
 import Errors from "../../components/Errors/Errors";
 import MovieList from "../../components/MovieList/MovieList";
-import { useSearchParams } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 
 const MoviesPage = () => {
   const [filtredMovi, setFiltredMovie] = useState([]);
@@ -11,6 +11,8 @@ const MoviesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   // const [query, setQuery] = useState("");
   const query = searchParams.get("query") ?? "";
+  const location = useLocation();
+  console.log(location);
 
   useEffect(() => {
     const searchMovie = async () => {
