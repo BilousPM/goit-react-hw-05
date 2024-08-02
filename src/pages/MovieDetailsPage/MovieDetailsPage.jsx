@@ -2,7 +2,7 @@ import { Suspense, useEffect, useRef, useState } from "react";
 import { movieDetailsById } from "../../servises/api";
 import { NavLink, Outlet, useLocation, useParams } from "react-router-dom";
 import Errors from "../../components/Errors/Errors";
-import s from "./MoviDetailsPage.module.css";
+import s from "./MovieDetailsPage.module.css";
 
 const MoviDetailsPage = () => {
   const [data, setData] = useState(null);
